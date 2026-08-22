@@ -7,8 +7,8 @@ import { Download, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ResumeDoodle from "./resume-doodle";
 
-// Drop the compiled PDF here: public/Bhargav_Koushal_Resume.pdf
-const RESUME_PATH = "/Bhargav_Koushal_Resume.pdf";
+// Drop the compiled PDF here: public/my_resume.pdf
+const RESUME_PATH = "/my_resume.pdf";
 
 export default function ResumeView() {
   return (
@@ -36,10 +36,10 @@ export default function ResumeView() {
             <ArrowLeft className="h-4 w-4" />
             Back to portfolio
           </Link>
-          <Button>
+          <Button asChild>
             <a
               href={RESUME_PATH}
-              download
+              download="my_resume.pdf"
               className="flex gap-2 text-sm transition-colors hover:text-foreground"
             >
               <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
