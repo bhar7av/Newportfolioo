@@ -49,59 +49,31 @@ const ContactForm = () => {
     const igUrl = `https://ig.me/m/${igUsername}`;
 
     try {
-      const res = await fetch("/api/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fullName, email, message }),
-      });
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || `Request failed (${res.status})`);
-      }
-      
-      try {
-        await navigator.clipboard.writeText(`Hi Bhargav, I'm ${fullName} (${email}).\n\n${message}`);
-      } catch (clipErr) {
-        console.warn("Failed to copy message to clipboard:", clipErr);
-      }
-
-      toast({
-        title: "Redirecting to Instagram DM...",
-        description: "Your message has been copied to your clipboard.",
-        variant: "default",
-        className: cn("top-0 mx-auto flex fixed md:top-4 md:right-4"),
-      });
-      setLoading(false);
-      setFullName("");
-      setEmail("");
-      setMessage("");
-      const timer = setTimeout(() => {
-        window.location.href = igUrl;
-        clearTimeout(timer);
-      }, 1500);
-    } catch (err) {
-      try {
-        await navigator.clipboard.writeText(`Hi Bhargav, I'm ${fullName} (${email}).\n\n${message}`);
-      } catch (clipErr) {
-        console.warn("Failed to copy message to clipboard:", clipErr);
-      }
-      toast({
-        title: "Redirecting to Instagram...",
-        description: "Your message has been copied to your clipboard.",
-        className: cn(
-          "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
-        ),
-        variant: "default",
-      });
-      setLoading(false);
-      setFullName("");
-      setEmail("");
-      setMessage("");
-      const timer = setTimeout(() => {
-        window.location.href = igUrl;
-        clearTimeout(timer);
-      }, 1500);
+      await navigator.clipboard.writeText(`Hi Bhargav, I'm ${fullName} (${email}).\n\n${message}`);
+    } catch (clipErr) {
+      console.warn("Failed to copy message to clipboard:", clipErr);
     }
+
+    toast({
+      title: "Opening Instagram DM...",
+      description: "Your message has been copied to your clipboard.",
+      variant: "default",
+      className: cn("top-0 mx-auto flex fixed md:top-4 md:right-4"),
+    });
+
+    // Fire the API send in the background
+    fetch("/api/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fullName, email, message }),
+    }).catch((err) => console.error("Background API send failed:", err));
+
+    setFullName("");
+    setEmail("");
+    setMessage("");
+
+    // Instant redirect
+    window.location.href = igUrl;
     setLoading(false);
   };
   return (
