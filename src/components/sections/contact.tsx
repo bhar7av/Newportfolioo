@@ -29,10 +29,18 @@ const ContactSection = () => {
               <a
                 target="_blank"
                 href={`mailto:${config.email}`}
-                className="text-gray-200 cursor-can-hover rounded-lg"
+                className="text-gray-200 cursor-can-hover rounded-lg underline underline-offset-2 hover:text-white"
               >
                 {config.email.replace(/@/g, "(at)")}
-              </a>{" "}
+              </a>{", "}
+              DM me on Instagram at{" "}
+              <a
+                target="_blank"
+                href={config.social.instagram}
+                className="text-gray-200 cursor-can-hover rounded-lg underline underline-offset-2 hover:text-white"
+              >
+                @{config.social.instagram.split("/").pop()}
+              </a>{", "}
               or drop your info here.
             </CardDescription>
           </CardHeader>

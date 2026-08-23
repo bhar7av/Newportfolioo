@@ -9,6 +9,7 @@ import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
+import { config } from "@/data/config";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
@@ -44,6 +45,9 @@ const ContactForm = () => {
     }
 
     setLoading(true);
+    const igUsername = config.social.instagram.split("/").pop() || "bhar7avkoushal";
+    const igUrl = `https://ig.me/m/${igUsername}`;
+
     try {
       const res = await fetch("/api/send", {
         method: "POST",
@@ -54,9 +58,16 @@ const ContactForm = () => {
         const data = await res.json();
         throw new Error(data.error || `Request failed (${res.status})`);
       }
+      
+      try {
+        await navigator.clipboard.writeText(`Hi Bhargav, I'm ${fullName} (${email}).\n\n${message}`);
+      } catch (clipErr) {
+        console.warn("Failed to copy message to clipboard:", clipErr);
+      }
+
       toast({
-        title: "Thank you!",
-        description: "I'll get back to you as soon as possible.",
+        title: "Redirecting to Instagram DM...",
+        description: "Your message has been copied to your clipboard.",
         variant: "default",
         className: cn("top-0 mx-auto flex fixed md:top-4 md:right-4"),
       });
@@ -65,18 +76,31 @@ const ContactForm = () => {
       setEmail("");
       setMessage("");
       const timer = setTimeout(() => {
-        router.push("/");
+        window.location.href = igUrl;
         clearTimeout(timer);
-      }, 1000);
+      }, 1500);
     } catch (err) {
+      try {
+        await navigator.clipboard.writeText(`Hi Bhargav, I'm ${fullName} (${email}).\n\n${message}`);
+      } catch (clipErr) {
+        console.warn("Failed to copy message to clipboard:", clipErr);
+      }
       toast({
-        title: "Error",
-        description: "Something went wrong! Please try again.",
+        title: "Redirecting to Instagram...",
+        description: "Your message has been copied to your clipboard.",
         className: cn(
           "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
         ),
-        variant: "destructive",
+        variant: "default",
       });
+      setLoading(false);
+      setFullName("");
+      setEmail("");
+      setMessage("");
+      const timer = setTimeout(() => {
+        window.location.href = igUrl;
+        clearTimeout(timer);
+      }, 1500);
     }
     setLoading(false);
   };
