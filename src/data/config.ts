@@ -24,7 +24,7 @@ const config = {
   githubRepo: "Newportfolioo",
 
   get ogImg() {
-    return this.site + "/assets/seo/og-image.png";
+    return this.site + "/assets/seo/og-image.png?v=3";
   },
   social: {
     twitter: "",
