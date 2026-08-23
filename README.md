@@ -2,7 +2,7 @@
 
 An interactive 3D portfolio website built with Next.js, Spline, Tailwind CSS, GSAP, and Framer Motion. 
 
-Deployed at: https://bhargavs-portfolio-theta.vercel.app/
+Deployed at: https://bhar7av-portfolio.vercel.app/
 
 ## Project Overview
 
