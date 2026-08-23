@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const ExperienceSection = () => {
   return (
     <SectionWrapper
+      id="experience"
       className="flex flex-col items-center justify-center min-h-[120vh] py-20"
     >
       <div className="w-full max-w-4xl px-4 md:px-8 mx-auto">
@@ -16,7 +17,7 @@ const ExperienceSection = () => {
           id="experience"
           title="Experience"
           desc="My professional journey."
-          className="mb-12 md:mb-20 mt-0"
+          className="static mb-12 md:mb-20 mt-0"
         />
 
         <div className="flex flex-col gap-8 md:gap-12 relative">

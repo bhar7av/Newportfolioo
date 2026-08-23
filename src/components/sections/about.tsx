@@ -14,6 +14,7 @@ const AboutSection = () => {
 
   return (
     <SectionWrapper
+      id="about"
       className="flex flex-col items-center justify-center min-h-[90vh] py-20"
     >
       <div className="w-full max-w-4xl px-4 md:px-8 mx-auto">
@@ -21,7 +22,7 @@ const AboutSection = () => {
           id="about"
           title="About Me"
           desc="Who I am."
-          className="mb-12 md:mb-16 mt-0"
+          className="static mb-12 md:mb-16 mt-0"
         />
 
         <motion.div

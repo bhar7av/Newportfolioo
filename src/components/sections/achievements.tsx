@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 const AchievementsSection = () => {
   return (
     <SectionWrapper
+      id="achievements"
       className="flex flex-col items-center justify-center min-h-[100vh] py-20"
     >
       <div className="w-full max-w-5xl px-4 md:px-8 mx-auto">
@@ -15,7 +16,7 @@ const AchievementsSection = () => {
           id="achievements"
           title="Achievements"
           desc="Milestones and roles I have achieved."
-          className="mb-12 md:mb-20 mt-0"
+          className="static mb-12 md:mb-20 mt-0"
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

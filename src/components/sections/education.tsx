@@ -10,6 +10,7 @@ import { GraduationCap } from "lucide-react";
 const EducationSection = () => {
   return (
     <SectionWrapper
+      id="education"
       className="flex flex-col items-center justify-center min-h-[100vh] py-20"
     >
       <div className="w-full max-w-4xl px-4 md:px-8 mx-auto">
@@ -17,7 +18,7 @@ const EducationSection = () => {
           id="education"
           title="Education"
           desc="My academic background."
-          className="mb-12 md:mb-20 mt-0"
+          className="static mb-12 md:mb-20 mt-0"
         />
 
         <div className="flex flex-col gap-8 md:gap-12 relative">
