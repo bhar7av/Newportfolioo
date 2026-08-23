@@ -7,6 +7,9 @@ const config = {
   },
   keywords: [
     "Bhargav Koushal",
+    "Bhargav",
+    "Bhargav koushal",
+    "Bhargav Koushal NIT srinagar",
     "portfolio",
     "developer",
     "ML enthusiast",
@@ -33,6 +36,6 @@ const config = {
     facebook: "",
     github: "https://github.com/bhar7av",
   },
-  googleSiteVerification: "", // Add code from Google Search Console (e.g., "googleSiteVerification: 'your-code'")
+  googleSiteVerification: "0DFBDWgvMyv3RUENQRgAEtVG_qO9m32qV0eKLxwDE7Q", // Add code from Google Search Console (e.g., "googleSiteVerification: 'your-code'")
 };
 export { config };
