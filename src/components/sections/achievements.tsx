@@ -30,7 +30,7 @@ const AchievementsSection = () => {
                 ease: "easeOut",
               }}
               viewport={{ once: true, margin: "-50px" }}
-              className="h-full"
+              className="h-full p-3 -m-3"
             >
               <Card
                 className={cn(

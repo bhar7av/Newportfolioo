@@ -249,7 +249,7 @@ export const EDUCATION: Education[] = [
     endDate: "2028",
     degree: "B.Tech in Information Technology",
     school: "National Institute of Technology, Srinagar",
-    grade: "CGPA: 8.4",
+    grade: "CGPA: 8.0 (till 3rd sem)",
     details: "Currently pursuing B.Tech in IT. Serving as Class Representative coordinating communication between faculty and IT branch student body. Engaged in competitive programming and front-end development.",
   },
   {
@@ -291,8 +291,8 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     id: 2,
     value: "SSB",
-    title: "Conference Out Candidate",
-    description: "Selected as Conference Out Candidate from SSB — demonstrating mental aptitude & leadership",
+    title: "Conference Selected Candidate",
+    description: "Selected as Conference Selected Candidate from SSB — demonstrating mental aptitude & leadership",
     emoji: "🎖️",
   },
   {

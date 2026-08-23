@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const AboutSection = () => {
   const stats = [
-    { label: "CGPA", value: "8.4" },
+    { label: "CGPA", value: "8.0" },
     { label: "Projects", value: "4" },
     { label: "Followers", value: "3,000+" },
     { label: "Students Mentored", value: "25" },
@@ -58,7 +58,7 @@ const AboutSection = () => {
                     <strong className="text-foreground font-semibold">
                       NIT Srinagar
                     </strong>{" "}
-                    with an <strong className="text-foreground font-semibold">8.4 CGPA</strong>. I love building things that live on the internet &mdash; from pixel-perfect front-end clones to ML-powered forecasting models. When I'm not coding, you'll find me editing videos, creating content for my 3,000+ Youtube/Instagram followers, or mentoring high school students in science.
+                    with an <strong className="text-foreground font-semibold">8 CGPA till 3rd sem</strong>. I love building things that live on the internet &mdash; from pixel-perfect front-end clones to ML-powered forecasting models. When I'm not coding, you'll find me editing videos, creating content for my 3,000+ Youtube/Instagram followers, or mentoring high school students in science.
                   </p>
                   <p>
                     I'm passionate about merging creativity with technology &mdash; and I'm always looking for the next crazy project to build.
