@@ -55,7 +55,7 @@ const AboutSection = () => {
 
                 <div className="space-y-4 text-base text-muted-foreground leading-relaxed">
                   <p>
-                    I'm a 2nd-year B.Tech Information Technology student at{" "}
+                    I'm a 3rd-year B.Tech Information Technology student at{" "}
                     <strong className="text-foreground font-semibold">
                       NIT Srinagar
                     </strong>{" "}
