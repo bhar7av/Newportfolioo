@@ -263,8 +263,8 @@ export const EDUCATION: Education[] = [
   },
   {
     id: 3,
-    startDate: "2020",
-    endDate: "2020",
+    startDate: "2022",
+    endDate: "2022",
     degree: "Class X",
     school: "BSF Senior Secondary School, Paloura Jammu",
     grade: "Percentage: 94.6%",
